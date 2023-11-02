@@ -13,7 +13,6 @@ var addr string = "localhost:50051"
 
 func main() {
 
-	// did like this because of ssl error
 	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 
 	if err != nil {
@@ -25,5 +24,6 @@ func main() {
 	c := pb.NewCalculatorServiceClient(conn)
 
 	// doSum(c)
-	doPrimes(c)
+	// doPrimes(c)
+	doAvg(c)
 }
